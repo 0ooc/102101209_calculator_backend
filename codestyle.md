@@ -1,19 +1,31 @@
-[代码规范来源](http://tgideas.qq.com/doc/index.html)
+[代码规范来源](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/)
 
-# HTML
-## HTML标签
-1.标签必须合法且闭合、嵌套正确，标签名需小写
 
-2.标签语法无错误，需要符合语义化
+# 模板样式
 
-3.标签的自定义属性以 `data-`  开头，如：`<a href="#" data-num='18'></a>`
+在 Django 模板代码中，在卷曲之间放置一个（并且只有一个）空格 括号和标记内容。
 
-4.除非有特定的功能、组件要求等，禁止随意使用id来定义元素样式
+这样做：
 
-# CSS
-## 选择器
-1.CSS类名命名参考注释与命名
+`{{ foo }}`
 
-2.禁止使用层级过深的选择器，最多3级。
+别这样：
+
+`{{foo}}`
+
+# 视图样式
+
+在 Django 视图中，应该调用视图函数中的第一个参数。request
+
+这样做：
+
+`def my_view(request, foo):
+    ...`
+    
+别这样：
+
+`def my_view(req, foo):
+    ...`
+
 
 
